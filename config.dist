@@ -1,0 +1,16 @@
+# nginx
+SITE_AVAILABLE="/etc/nginx/sites-available/"
+SITE_ENABLED="/etc/nginx/sites-enabled/"
+
+WEBSERVER_CMD="nginx"
+WEBSERVER_CMD_CONFIGTEST="${WEBSERVER_CMD} -t"
+WEBSERVER_CMD_RESTART="service ${WEBSERVER_CMD} restart"
+
+# apache2
+#SITE_AVAILABLE="/etc/apache2/sites-available/"
+#SITE_ENABLED="/etc/apache2/sites-enabled/"
+
+#WEBSERVER_CMD="apache2"
+#WEBSERVER_CMD_CONFIGTEST="apache2ctl -t"
+#WEBSERVER_CMD_RESTART="service ${WEBSERVER_CMD} restart"
+
