@@ -90,9 +90,11 @@ do
 done
 
 # the user (de)selects configfiles, all enabled end up in "choices"
-whiptail --noitem --nocancel --ok-button "DONE" \
+whiptail --noitem --nocancel \
+	--ok-button "DONE" \
+	--title "Active Sites" \
 	--separate-output \
-	--checklist "Active Sites\nuse <SPACE> to (de)activate sites" 20 78 10 \
+	--checklist "use <SPACE> to (de)activate sites" 20 78 10 \
 	$options 2>${TMP_FILE}
 choices=$(cat ${TMP_FILE})
 
@@ -114,6 +116,7 @@ do
 			# site is not enabled, but should be - new symlink
 			ln -s "${SITE_AVAILABLE}${siteEnabled}" "${SITE_ENABLED}"
 			configChanged="yes"
+			break
 		fi
 	done
 
